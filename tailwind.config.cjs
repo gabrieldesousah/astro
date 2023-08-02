@@ -4,6 +4,9 @@ module.exports = {
   purge: ['./public/**/*.html', './src/**/*.{astro,js,svelte,ts,vue}'],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+    },
   },
   plugins: [],
 };

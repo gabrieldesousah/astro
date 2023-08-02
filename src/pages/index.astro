@@ -1,5 +1,7 @@
 ---
 import Header from '../components/Header.vue';
+import MainSection from '../components/MainSection.vue';
+import Testimonials from '../components/Testimonials.vue';
 ---
 
 <html lang='en'>
@@ -11,7 +13,8 @@ import Header from '../components/Header.vue';
     <title>Astro</title>
   </head>
   <body>
-    <Header client:load />
-    <h1>Astro</h1>
+    <Header client:only />
+    <MainSection />
+    <Testimonials client:visible />
   </body>
 </html>
