@@ -6,8 +6,9 @@
         <p>Melhor do que deixar a AUVP falar sobre si, é deixar os nossos alunos falarem sobre o que a AUVP representou na
           vida deles.</p>
         <div class='flex flex-row items-center'>
-          <span @click='previous()' class='flex-1'>
-            anterior</span>
+          <span @click='previous()' class='flex-1 cursor-pointer h-12'>
+            <BackwardIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+          </span>
           <ul v-for="(testimonial, idx) in testimonials" :key="idx">
             <li v-if="currentTestimonial === idx">
               <figure class='bg-white m-10 rounded p-10'>
@@ -26,10 +27,9 @@
               </figure>
             </li>
           </ul>
-
-          <span @click='next()' class='flex-1'>
-            próximo</span>
-          <ForwardIcon class="h-5 w-5" />
+          <span @click='next()' class='flex-1 cursor-pointer h-12'>
+            <ForwardIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+          </span>
         </div>
       </div>
       <div class="mt-6">
@@ -45,58 +45,56 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      testimonials: [
-        {
-          avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/logo.png",
-          name: "Flavio Clivati",
-          title: "Administrador",
-          quote: 'Hoje, fazendo parte da Comunidade UVP, do Cardume de Sardinhas, tenho absoluta certeza que valeu muito. Parabéns pelo trabalho, pela dedicação, pela atenção, pelo conteúdo aberto e fechado, pela maneira de passar "a real", sem frescura, sem meias palavras para agradar.'
-        },
-        {
-          avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/esther.png",
-          name: "Esther Prestes",
-          title: "Social Media",
-          quote: "É incrível como o Raul foi capaz de transformar investimentos em algo realmente interessante e fazer com que a gente tenha vontade (e goste, o que é mais louco!) de estudar isso todos os dias. Se você estiver pensando em fazer a UVP, prepare-se para enxergar a realidade com outros olhos e sair da sua zona de conforto. Recomendo o curso de olhos fechados!"
-        },
-        {
-          avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/1-4.png",
-          name: "Roberto Arlindo",
-          title: "Aluno da segunda turma da UVP",
-          quote: 'Conheci o Investidor Sardinha em 2019, no começo do canal, entrei na UVP algum tempo depois. Fazer parte da segunda turma mudou a minha vida, não só aprendi a investir no Brasil e no mundo, como transformei também a minha forma de ver o mundo'
-        },
-        {
-          avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/1-6.png",
-          name: "Evy",
-          title: "Servidora Pública",
-          quote: 'Com a UVP eu aprendi de forma estrutural não somente sobre investimentos, mas de forma ampla e irrestrita o caminho a ser trilhado para me tornar investidora com conhecimento técnico e escolher uma forma de rentabilizar o patrimônio investido sem riscos desnecessários.'
-        },
-      ],
-      currentTestimonial: 0,
-    }
-  },
-  methods: {
-    setCurrentTestimonial(index) {
-      this.currentTestimonial = index;
-    },
-    next() {
-      if (this.currentTestimonial === (this.testimonials.length - 1))
-        this.currentTestimonial = 0
-      else
-        this.currentTestimonial = ++this.currentTestimonial
-    },
-    previous() {
-      if (this.currentTestimonial === 0)
-        this.currentTestimonial = (this.testimonials.length - 1)
-      else
-        this.currentTestimonial = --this.currentTestimonial
-    }
-  },
-}
 
-import { ForwardIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
+<script setup>
+import { ref } from 'vue';
 
+import { ForwardIcon, BackwardIcon } from '@heroicons/vue/20/solid'
+
+const testimonials = [
+  {
+    avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/logo.png",
+    name: "Flavio Clivati",
+    title: "Administrador",
+    quote: 'Hoje, fazendo parte da Comunidade UVP, do Cardume de Sardinhas, tenho absoluta certeza que valeu muito. Parabéns pelo trabalho, pela dedicação, pela atenção, pelo conteúdo aberto e fechado, pela maneira de passar "a real", sem frescura, sem meias palavras para agradar.'
+  },
+  {
+    avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/esther.png",
+    name: "Esther Prestes",
+    title: "Social Media",
+    quote: "É incrível como o Raul foi capaz de transformar investimentos em algo realmente interessante e fazer com que a gente tenha vontade (e goste, o que é mais louco!) de estudar isso todos os dias. Se você estiver pensando em fazer a UVP, prepare-se para enxergar a realidade com outros olhos e sair da sua zona de conforto. Recomendo o curso de olhos fechados!"
+  },
+  {
+    avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/1-4.png",
+    name: "Roberto Arlindo",
+    title: "Aluno da segunda turma da UVP",
+    quote: 'Conheci o Investidor Sardinha em 2019, no começo do canal, entrei na UVP algum tempo depois. Fazer parte da segunda turma mudou a minha vida, não só aprendi a investir no Brasil e no mundo, como transformei também a minha forma de ver o mundo'
+  },
+  {
+    avatar: "https://w5u7i7m8.rocketcdn.me/wp-content/uploads/2021/04/1-6.png",
+    name: "Evy",
+    title: "Servidora Pública",
+    quote: 'Com a UVP eu aprendi de forma estrutural não somente sobre investimentos, mas de forma ampla e irrestrita o caminho a ser trilhado para me tornar investidora com conhecimento técnico e escolher uma forma de rentabilizar o patrimônio investido sem riscos desnecessários.'
+  },
+]
+
+const currentTestimonial = ref(0);
+
+const setCurrentTestimonial = (index) => {
+  currentTestimonial.value = index;
+};
+
+const next = () => {
+  if (currentTestimonial.value === (testimonials.length - 1))
+    currentTestimonial.value = 0
+  else
+    currentTestimonial.value = currentTestimonial.value + 1
+};
+
+const previous = () => {
+  if (currentTestimonial.value === 0)
+    currentTestimonial.value = testimonials.length - 1
+  else
+    currentTestimonial.value = currentTestimonial.value - 1
+};
 </script>
