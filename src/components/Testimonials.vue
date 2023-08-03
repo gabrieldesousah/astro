@@ -27,7 +27,7 @@
               </figure>
             </li>
           </ul>
-          <span @click='next()' class='flex-1 cursor-pointer h-12'>
+          <span @click='next()' class='flex-1 cursor-pointer'>
             <ForwardIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
           </span>
         </div>
