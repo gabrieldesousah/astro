@@ -75,7 +75,7 @@
 }
 
 .header {
-  background-image: url('../assets/images/bg-header.jpg');
+  background-image: url('/assets/images/bg-header.jpg');
   background-size: cover;
   background-position: 50% 100%;
   background-repeat: no-repeat;

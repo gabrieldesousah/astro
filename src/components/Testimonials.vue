@@ -5,24 +5,32 @@
         <h3 class="text-3xl text-yellow-500 font-semibold pb-6">Opinião de alunos</h3>
         <p>Melhor do que deixar a AUVP falar sobre si, é deixar os nossos alunos falarem sobre o que a AUVP representou na
           vida deles.</p>
-        <ul v-for="(testimonial, idx) in testimonials" :key="idx">
-          <li v-if="currentTestimonial === idx">
-            <figure class='bg-white m-10 rounded p-10'>
-              <blockquote>
-                <p class="text-gray-600 font-small sm:text-small">
-                  {{ testimonial.quote }}
-                </p>
-              </blockquote>
-              <div class="mt-6">
-                <img :src="testimonial.avatar" class="w-16 h-16 mx-auto rounded-full" />
-                <div class="mt-3">
-                  <span class="block text-gray-500 font-semibold">{{ testimonial.name }}</span>
-                  <span class="block text-gray-500 text-sm mt-0.5">{{ testimonial.title }}</span>
+        <div class='flex flex-row items-center'>
+          <span @click='previous()' class='flex-1'>
+            anterior</span>
+          <ul v-for="(testimonial, idx) in testimonials" :key="idx">
+            <li v-if="currentTestimonial === idx">
+              <figure class='bg-white m-10 rounded p-10'>
+                <blockquote>
+                  <p class="text-gray-600 font-small sm:text-small">
+                    {{ testimonial.quote }}
+                  </p>
+                </blockquote>
+                <div class="mt-6">
+                  <img :src="testimonial.avatar" class="w-16 h-16 mx-auto rounded-full" />
+                  <div class="mt-3">
+                    <span class="block text-gray-500 font-semibold">{{ testimonial.name }}</span>
+                    <span class="block text-gray-500 text-sm mt-0.5">{{ testimonial.title }}</span>
+                  </div>
                 </div>
-              </div>
-            </figure>
-          </li>
-        </ul>
+              </figure>
+            </li>
+          </ul>
+
+          <span @click='next()' class='flex-1'>
+            próximo</span>
+          <ForwardIcon class="h-5 w-5" />
+        </div>
       </div>
       <div class="mt-6">
         <ul class="flex gap-x-3 justify-center">
@@ -74,6 +82,21 @@ export default {
     setCurrentTestimonial(index) {
       this.currentTestimonial = index;
     },
+    next() {
+      if (this.currentTestimonial === (this.testimonials.length - 1))
+        this.currentTestimonial = 0
+      else
+        this.currentTestimonial = ++this.currentTestimonial
+    },
+    previous() {
+      if (this.currentTestimonial === 0)
+        this.currentTestimonial = (this.testimonials.length - 1)
+      else
+        this.currentTestimonial = --this.currentTestimonial
+    }
   },
 }
+
+import { ForwardIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
+
 </script>

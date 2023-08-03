@@ -5,7 +5,7 @@
         <a href="#" class="-m-1.5 p-1.5">
           <span class="sr-only">AUVP - A maior escola de investimentos do Brasil - Curso Investidor Sardinha - Raul
             Sena</span>
-          <img class="h-16 w-auto" :src="logo.src" alt="Logo - AUVP" />
+          <img class="h-16 w-auto" src="/assets/images/logo.png" alt="Logo - AUVP" />
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -123,7 +123,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import logo from "../assets/images/logo.png"
+
 import {
   Dialog,
   DialogPanel,
