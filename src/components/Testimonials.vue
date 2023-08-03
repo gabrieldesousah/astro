@@ -6,11 +6,11 @@
         <p>Melhor do que deixar a AUVP falar sobre si, é deixar os nossos alunos falarem sobre o que a AUVP representou na
           vida deles.</p>
         <div class='flex flex-row items-center'>
-          <span @click='previous()' class='flex-1 cursor-pointer h-12'>
+          <span @click='userTriggeredPrevious()' class='flex-1 cursor-pointer h-12'>
             <BackwardIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
           </span>
-          <ul v-for="(testimonial, idx) in testimonials" :key="idx">
-            <li v-if="currentTestimonial === idx">
+          <ul v-for="(testimonial, idx) in testimonials">
+            <li v-if="currentTestimonial === idx" :key="idx">
               <figure class='bg-white m-10 rounded p-10'>
                 <blockquote>
                   <p class="text-gray-600 font-small sm:text-small">
@@ -27,7 +27,7 @@
               </figure>
             </li>
           </ul>
-          <span @click='next()' class='flex-1 cursor-pointer'>
+          <span @click='userTriggeredNext()' class='flex-1 cursor-pointer'>
             <ForwardIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
           </span>
         </div>
@@ -47,7 +47,7 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 import { ForwardIcon, BackwardIcon } from '@heroicons/vue/20/solid'
 
@@ -86,15 +86,41 @@ const setCurrentTestimonial = (index) => {
 
 const next = () => {
   if (currentTestimonial.value === (testimonials.length - 1))
-    currentTestimonial.value = 0
+    setCurrentTestimonial(0)
   else
-    currentTestimonial.value = currentTestimonial.value + 1
+    setCurrentTestimonial(currentTestimonial.value + 1)
 };
 
 const previous = () => {
   if (currentTestimonial.value === 0)
-    currentTestimonial.value = testimonials.length - 1
+    setCurrentTestimonial(testimonials.length - 1)
   else
-    currentTestimonial.value = currentTestimonial.value - 1
+    setCurrentTestimonial(currentTestimonial.value - 1)
 };
+
+let intervalId = null;
+
+const startSlideShow = () => {
+  intervalId = setInterval(next, 5000);
+};
+
+const stopSlideShow = () => {
+  clearInterval(intervalId);
+};
+
+const userTriggeredNext = () => {
+  stopSlideShow();
+  next();
+  startSlideShow();
+};
+
+const userTriggeredPrevious = () => {
+  stopSlideShow();
+  previous();
+  startSlideShow();
+};
+
+onMounted(startSlideShow);
+
+onUnmounted(stopSlideShow);
 </script>
