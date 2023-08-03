@@ -50,15 +50,15 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-50">Principal</a>
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-600">Principal</a>
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-50">Nosso
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-600">Nosso
                 Processo</a>
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-50">Dúvidas
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-600">Dúvidas
                 Frequentes</a>
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-50">Consultoria
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-yellow-500 hover:underline focus:outline-none focus:underline hover:bg-gray-600">Consultoria
                 Individual</a>
             </div>
             <div>
