@@ -2,16 +2,16 @@
   <section class="py-14 bg-slate-100">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-3xl text-yellow-500 font-semibold pb-6">Opinião de alunos</h3>
+        <h3 class="text-5xl text-yellow-500 font-semibold pb-6">Opinião de alunos</h3>
         <p>Melhor do que deixar a AUVP falar sobre si, é deixar os nossos alunos falarem sobre o que a AUVP representou na
           vida deles.</p>
         <div class='flex flex-row items-center'>
-          <span @click='userTriggeredPrevious()' class='flex-1 cursor-pointer h-12'>
+          <span @click='userTriggeredPrevious()' class='flex-1 cursor-pointer'>
             <BackwardIcon class="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
           </span>
           <ul v-for="(testimonial, idx) in testimonials">
             <li v-if="currentTestimonial === idx" :key="idx">
-              <figure class='bg-white m-10 rounded p-10'>
+              <figure class='bg-white m-1 p-10'>
                 <blockquote>
                   <p class="text-gray-600 font-small sm:text-small">
                     {{ testimonial.quote }}

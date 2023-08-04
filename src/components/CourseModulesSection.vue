@@ -8,7 +8,7 @@
       Esse é o nosso conteúdo programático:
     </p>
 
-    <div class='grid grid-cols-3 gap-4'>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
       <div v-for="(module) in modules" class='p-5'>
         <img :src='module.image' :alt=module.name>
         <h3 class='font-bold text-2xl mt-5 mb-5'>{{ module.name }} - {{ module.lenght }}</h3>

@@ -28,7 +28,8 @@
           Individual</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href='#' class='px-5 py-2  bg-yellow-500 font-medium text-white rounded-full focus:outline-none'>
+        <a href='#'
+          class='px-5 py-2  bg-yellow-500 font-medium text-white rounded-full focus:outline-none hover:bg-red-700'>
           Área do aluno
         </a>
       </div>
@@ -62,7 +63,8 @@
                 Individual</a>
             </div>
             <div>
-              <a href='#' class='px-5 py-2  bg-yellow-500 font-medium text-white rounded-full focus:outline-none'>
+              <a href='#'
+                class='px-5 py-2  bg-yellow-500 font-medium text-white rounded-full focus:outline-none hover:bg-red-700'>
                 Área do aluno
               </a>
             </div>

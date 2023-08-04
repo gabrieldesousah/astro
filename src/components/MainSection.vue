@@ -13,7 +13,8 @@
         </h2>
       </div>
       <div class='animation-fade-in-left flex justify-center'>
-        <button class='mt-10 px-12 py-4 uppercase bg-green-600 font-semibold text-white rounded-full focus:outline-none'>
+        <button
+          class='mt-10 px-12 py-4 uppercase bg-green-600 hover:bg-green-700 font-semibold text-white rounded-full focus:outline-none'>
           Faça a sua análise de perfil
         </button>
       </div>

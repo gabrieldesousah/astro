@@ -1,8 +1,8 @@
 <template>
-  <div class='w-full bg-gray-900 text-white p-10 flex'>
-    <div class='flex-1'>
+  <div class='w-full bg-gray-900 text-white p-10 flex flex-col md:flex-row'>
+    <div class='flex-1 mr-10'>
       <h1 class='text-5xl font-bold mb-10 text-yellow-500'>Sobre Raul Sena</h1>
-      <div class='mr-10'>
+      <div>
         <p class='mb-10'>
           Como você e a maioria dos brasileiros, eu não tive educação financeira. Meus pais eram <b>bem intencionados</b>,
           me criaram com carinho e me ensinaram tudo o que podiam. Mas, sobre dinheiro mesmo… nada!
@@ -21,8 +21,8 @@
         </p>
       </div>
     </div>
-    <div class='flex-1'>
-      <img class='rounded-lg' src='/assets/images/about-picture.jpg'>
+    <div class='flex-1 justify-center'>
+      <img class='w-full h-fit' src='/assets/images/about-picture.jpg'>
     </div>
   </div>
 </template>
